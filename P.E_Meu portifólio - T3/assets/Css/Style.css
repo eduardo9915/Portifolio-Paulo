@@ -5,19 +5,33 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-img{
-    width: 150px;
-    height: 150px;
-}
 
-header{
-    background-color: black;
+header{ /*vamos estilizar bloco por bloco, primeiro voc estiliza o header e ja deixa ele responsivo*/
+    background-color: #191919;
     display: flex;
     justify-content: center;
-    gap: 30vw;
     align-items: center;
     width: 100%;
-    height: 20vh;
+    flex-direction: column; 
+    /* position: fixed; */
+    top: 0;
+    gap: 2vh;
+    padding: 2vh;
+    /*Faltou um gap para voc dar um espaço entre os elementos, e um padding para no ficar tudo to prximo do topo */
+     /*perceba que isso afasta um pouco sua foto do topo.use o vh sempre que o "tamanho" corresponder  altura. e vw quanto  largura*/
+}
+
+header img {
+    border-radius: 50%;
+    max-width: 10vw;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+     /*aconselo n jusificar as sections assim, de forma geral, e sim justificar individualmente, pois esse center pode forçar todos os elementos filhos a ficarem centralizados, mesmo quando voc der um space-between ou algo assim*/
+     /*O mesmo para o align*/
+     /*tbm n recomendo definir altura para todas as seçoes, prejudica a flexibilidade dos elementos, podendo fazer com que a variaço da largura da tela prejudique a exibiçao na altura*/
 }
 
 h1{
@@ -26,36 +40,176 @@ h1{
 
 header p{
     color: white;
+    font-size: 19px;
 }
 
-ul{
-    list-style: none;
+.blocoNavegacao{
+    display: flex;    
+    background-color: #191919;
+}
+nav {
+    position: sticky;
+    top: 0;
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+/*Faltou dar um padding top e bottom no menu.os itens est muito prximos da borda*/
+ul{
+
+    list-style-type: none;
+    display: flex;
+    gap: 6rem;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
-    text-align: center;
     font-weight: 600;
 }
 
-.bloco-texto-header{
+.bloco-texto-header {
     text-align: center;
     justify-content: space-between;
     gap: 4rem;
 }
 
-.itemSobre-mim#segundoBloco{
-    display: flex;
-    gap: 6rem;
+p {
+    font-size: 22px;
+}
+
+#sobre-mim {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#sobre-mim p {
+    text-align: justify;
+    max-width: 400px;
+}
+
+#segundoBloco{
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+}
+
+table {
+    border: 2px solid #191919;
 }
 
 h2{
     text-align: center;
+    font-size: 36px;   
+}
+
+#projetos{
+    background-color: #f1f1f1;
+    padding-top: 2vh;
+    align-items: center;
+    padding-bottom: 2vh;
 }
 
 #projetos a{
     color: black;
+    font-size: 24px;
+}
+
+.blocoProjetos{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.itemProjetos img{
+    /* max-width: 330px; */
+    width: 100%;
+}
+
+.itemProjetos {
+    background-color: #38b6ff;
+    border: 2px solid #191919;
+    max-width: 15vw;
+    height: 225px;
+}
+
+#contato {
+    padding-top: 2vh;
+}
+#contato h2 {
+    padding-bottom: 1vh;
+}
+
+.blocoContato{
+    /* padding: 100px 300px; */
+        display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 2vh;
+
+}
+
+.blocoContato p{
+    font-size: 27px;
+    /* padding: 150px 0; */
+    text-align: center;
+}
+
+form{
+    border: 2px solid #191919;
+    width: 420px;
+    padding: 3vh;
+}
+
+.itemContato {
+    padding: 10px;
+}
+
+button {
+    width: 350px;
+    color: white;
+    font-weight: 600;
+    background-color: #38b6ff;
+    border: 2px solid #00a2ff;
+    padding: 5px;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    background-color: #191919;
+    color: white;
+    height: 3rem;
+    font-weight: 600;
+    justify-content: flex-end;
+}
+
+footer p{
+    text-align: right;
+}
+
+#segundoBloco {
+    display: flex;
+}
+
+@media (max-width: 420px){
+    header {
+        height: auto;
+    }
+
+    header img{
+        width: 30vw;
+    }
+
+    #segundoBloco{
+        flex-direction: column;
+    }
 }
